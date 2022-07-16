@@ -61,6 +61,25 @@ For query params we can use `Query` class.
     - gt (greater than)
     - lt (less than)
 
+## Data types
+
+- `str`
+- `int`
+- `float`
+- `bool`
+
+"Exotic" data from Pydantic:
+- `enum`
+- `HttpUrl`: Validates if data is compliant with URL format. e.g. `http://example.com`
+- `FilePath`: Validates if data is route to a file. e.g. `path/to/file.py`
+- `DirectoryPath`: Validates if data is route to a directory. e.g. `path/to/dir`
+- `EmailStr`: Validates if data i compliant with email format. e.g. `hola@gmail.com`
+- `PaymentCardNumber`
+- `IPvAnyAddress`
+- `NegativeFloat`, `PositiveFloat`, `NegativeInt`, `PositiveInt`
+
+More info: https://pydantic-docs.helpmanual.io/usage/types/#pydantic-types
+
 ## Order matter when defining path operations
 
 https://fastapi.tiangolo.com/tutorial/path-params/#order-matters
