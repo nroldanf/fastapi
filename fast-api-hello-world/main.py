@@ -1,4 +1,5 @@
 from typing import Optional
+from unittest.mock import Base
 from pydantic import BaseModel
 from fastapi import FastAPI
 from fastapi import Body, Query, Path
@@ -13,6 +14,11 @@ class Person(BaseModel):
     age: int
     hair_color: Optional[str] = None
     is_married: Optional[bool] = None
+
+class Location(BaseModel):
+    city: str
+    state: str
+    country: str
 
 # path operation
 @app.get("/")
@@ -54,3 +60,21 @@ def show_person(
     )
 ):
     return {person_id: "It exists."}
+
+# request body validations
+@app.put("/person/{person_id}")
+def update_person(
+    person_id: int = Path(
+        ..., 
+        gt=0,
+        title="Person's id.",
+        description="This is the person's id. Have to be greater than 0. It's required."
+    ),
+    person: Person = Body(...),
+    location: Location = Body(...)
+):
+    results = person.dict()
+    results.update(location.dict())
+    # easier way (not supported yet) person.dict() & location.dict()
+    return results
+    
