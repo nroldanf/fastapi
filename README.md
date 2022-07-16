@@ -47,6 +47,22 @@ Both are send in JSON format and both can have headers values.
 
 Descriptive representation of an real world entity e.g. an user. Models in FastAPI are created using Pydantic and this is done using Pydantic `BaseModel`
 
+## Validations
+
+For query params we can use `Query` class.
+
+- For `str`
+    - min_lenght
+    - max_lenght
+    - regex
+- For `int`
+    - ge (greater or equal to)
+    - le (less or equal to)
+    - gt (greater than)
+    - lt (less than)
+
+
+
 ## Some commands
 
 ### Start a server
