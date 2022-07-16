@@ -4,8 +4,46 @@ Python backend framework. One of the fastest frameworks, directly compete with N
 
 Uses uvicorn as server (software that distributes an application), Starlette (low-level backend framework) and Pydantic to define models.
 
-## Some commands
+## Path Operations
 
+### Operations
+
+- GET - Bring information and send infor in the path or query params.
+- POST - Send JSON information.
+- PUT - Update information
+- DELETE - Delete information
+- OPTIONS
+- HEAD
+- PATCH
+- TRACE
+
+### Path parameters
+
+Inside a path, a variable can be defined using the following notaiton:  `/route-name/{variable-name}`. 
+
+In general terms, these variables are used to point a resource within a collection. For example, a user_id.
+
+Path parameters are `mandatory`.
+
+### Query parameters
+
+If information want to be send within the route, but don't want them to be mandatory, we can use query parameters. Query parameters looks like this:
+
+`/route-name?username=myname&age=20&height=184`
+
+## Request Body
+
+When using HTTP we send the following:
+
+- Body
+- Headers
+
+When a client send information to a server: `Request`
+When a server sends information back to the client: `Response`
+
+Both are send in JSON format and both can have headers values.
+
+## Some commands
 
 ### Start a server
 Use uvicorn to start a server that serves requests and reload when code is modified (hot reloader).
