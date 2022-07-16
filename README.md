@@ -8,10 +8,10 @@ Uses uvicorn as server (software that distributes an application), Starlette (lo
 
 ### Operations
 
-- GET - Bring information and send infor in the path or query params.
-- POST - Send JSON information.
-- PUT - Update information
-- DELETE - Delete information
+- GET - Client brings information from the server and send info in the path or query params.
+- POST - Client sends JSON information (request) and receives a JSON response from the server.
+- PUT - Updates information
+- DELETE - Deletes information
 - OPTIONS
 - HEAD
 - PATCH
@@ -42,6 +42,10 @@ When a client send information to a server: `Request`
 When a server sends information back to the client: `Response`
 
 Both are send in JSON format and both can have headers values.
+
+## Models
+
+Descriptive representation of an real world entity e.g. an user. Models in FastAPI are created using Pydantic and this is done using Pydantic `BaseModel`
 
 ## Some commands
 
