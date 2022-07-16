@@ -61,7 +61,9 @@ For query params we can use `Query` class.
     - gt (greater than)
     - lt (less than)
 
+## Order matter when defining path operations
 
+https://fastapi.tiangolo.com/tutorial/path-params/#order-matters
 
 ## Some commands
 
